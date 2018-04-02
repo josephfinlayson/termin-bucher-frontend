@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="928c7921-ab00-48c3-911c-5f75672b13b1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +19,8 @@
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-end-line="37" />
+            <state relative-caret-position="630">
+              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -135,12 +134,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522682561779</updated>
       <workItem from="1522682563270" duration="184000" />
-      <workItem from="1522683133893" duration="324000" />
+      <workItem from="1522683133893" duration="491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="508000" />
+    <option name="totallyTimeSpent" value="675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1408" height="839" extended-state="0" />
@@ -184,8 +183,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-end-line="37" />
+        <state relative-caret-position="630">
+          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
         </state>
       </provider>
     </entry>
