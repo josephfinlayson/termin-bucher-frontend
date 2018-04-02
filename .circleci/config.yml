@@ -44,3 +44,13 @@ jobs:
       - run:
         commands:
           - aws s3 sync dist s3://termin-bucher --delete
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+
