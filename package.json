@@ -8,7 +8,7 @@
     "build": "poi build",
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
-    "test": "tyu"
+    "test": "exit "
   },
   "author": {
     "name": "Joseph Finlayson",
