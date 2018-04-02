@@ -38,12 +38,16 @@ jobs:
 #      - run: yarn test
 
   deploy:
+
+    working_directory: ~/repo
+
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
 #    prod:
 #      branch: master
     steps:
+      - checkout
       - run:
           name: deploy to S3 if tests pass and branch is Master
           command: yarn build
