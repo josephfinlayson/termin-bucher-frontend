@@ -42,8 +42,8 @@ jobs:
 #      branch: master
     steps:
       - run:
-          commands:
-            - aws s3 sync dist s3://termin-bucher --delete
+          name: deploy to S3 if tests pass and branch is Master
+          command: aws s3 sync dist s3://termin-bucher --delete
 
 workflows:
   version: 2
