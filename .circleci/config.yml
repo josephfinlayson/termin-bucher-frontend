@@ -44,6 +44,9 @@ jobs:
     steps:
       - run:
           name: deploy to S3 if tests pass and branch is Master
+          command: yarn build
+      - run:
+          name: deploy to S3 if tests pass and branch is Master
           command: aws s3 sync dist s3://termin-bucher --delete
 
 workflows:
