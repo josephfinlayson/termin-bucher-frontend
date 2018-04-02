@@ -18,7 +18,11 @@
     <leaf>
       <file leaf-file-name="circle.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/circle.yml">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="BACKLOG.md" pinned="false" current-in-tab="false">
@@ -143,12 +147,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522682561779</updated>
       <workItem from="1522682563270" duration="184000" />
-      <workItem from="1522683133893" duration="2828000" />
+      <workItem from="1522683133893" duration="2936000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3012000" />
+    <option name="totallyTimeSpent" value="3120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1408" height="839" extended-state="0" />
@@ -201,7 +205,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/circle.yml">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
