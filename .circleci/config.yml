@@ -37,9 +37,10 @@ jobs:
 #      - run: yarn test
 
   deploy:
-    prod:
-      branch: master
-      steps:
-        - run:
-            commands:
-              - aws s3 sync dist s3://termin-bucher --delete
+    executor: machine
+#    prod:
+#      branch: master
+    steps:
+      - run:
+        commands:
+          - aws s3 sync dist s3://termin-bucher --delete
