@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="928c7921-ab00-48c3-911c-5f75672b13b1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/circle.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,13 +16,9 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" selection-start-column="10" selection-end-column="10" />
-            </state>
-          </provider>
+      <file leaf-file-name="circle.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/circle.yml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="BACKLOG.md" pinned="false" current-in-tab="false">
@@ -62,6 +58,7 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/../termin-bucher/BACKLOG.md" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/circle.yml" />
       </list>
     </option>
   </component>
@@ -97,12 +94,6 @@
               <item name="termin-bucher-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="termin-bucher-frontend" type="47feb1d3:ProjectViewModuleNode" />
               <item name="termin-bucher-frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="termin-bucher-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="termin-bucher-frontend" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="termin-bucher-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name=".circleci" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -152,12 +143,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522682561779</updated>
       <workItem from="1522682563270" duration="184000" />
-      <workItem from="1522683133893" duration="2648000" />
+      <workItem from="1522683133893" duration="2828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2832000" />
+    <option name="totallyTimeSpent" value="3012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1408" height="839" extended-state="0" />
@@ -209,12 +200,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/circle.yml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
