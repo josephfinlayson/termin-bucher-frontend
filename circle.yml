@@ -25,4 +25,4 @@ deployment:
   s3up:
     branch: master
     commands:
-      - s3deploy -source=dist/ -region=us-west-2 -bucket=termin-bucher
+      - s3deploy -source=dist/ -region=eu-central-1 -bucket=termin-bucher
