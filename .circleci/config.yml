@@ -38,7 +38,9 @@ jobs:
 #      - run: yarn test
 
   deploy:
-    executor: machine
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:7.10
 #    prod:
 #      branch: master
     steps:
