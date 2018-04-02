@@ -41,5 +41,5 @@ jobs:
       branch: master
       steps:
         - run:
-          commands:
-            - aws s3 sync dist s3://termin-bucher --delete
+            commands:
+              - aws s3 sync dist s3://termin-bucher --delete
