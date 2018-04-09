@@ -37,40 +37,20 @@
       </div>
     </div>
 
-
-    <section class="container py-5 ">
-      <div class="row justify-content-center">
-        <form>
-          <h5> Sign up </h5>
-          <hr/>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">I confirm I want to recieve notifications about
-              available appointments for Anmeldung in Berlin</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </section>
-
+    <Email></Email>
   </div>
 </template>
 
 <script>
-import MyHeader from "./header";
-import Logo from "./logo";
-import step from "./step";
+  import MyHeader from "./header";
+  import Logo from "./logo";
+  import step from "./step";
+  import Email from "./Email";
 
-export default {
-  name: "app",
-  components: { Logo, MyHeader, step }
-};
+  export default {
+    name: "app",
+    components: {Logo, MyHeader, step, Email}
+  };
 </script>
 
 <!-- CSS libraries -->
