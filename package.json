@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "poi",
+    "dev": "NODE_ENV=dev poi",
     "build": "poi build",
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",

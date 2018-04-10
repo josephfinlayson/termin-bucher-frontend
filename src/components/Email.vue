@@ -32,43 +32,52 @@
 
 
 <script>
-  import MyHeader from "./header";
-  import Logo from "./logo";
-  import step from "./step";
+import MyHeader from "./header";
+import Logo from "./logo";
+import step from "./step";
 
-  const api_url = "http://localhost:3000/email"
+function isDev() {
+  return process.env.NODE_ENV === "development";
+}
+const api_url = isDev() ? "http://localhost:3000/api/email" : "/api/email";
 
-  export default {
-    name: "Email",
-    components: {},
-    data: function () {
-      return {   // declare message with an empty value
-        confirmed: true,
-        email: 'asdf@asdf.com',
-        success: false
-      }
-    },
-    methods: {
-      submitEmail: function (source) {
-        console.log(fetch)
-        fetch(api_url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            email: this.email,
-          })
+const data = isDev()
+  ? {
+      email: "asdf@asdf.com",
+      confirmed: true
+    }
+  : {
+      email: "",
+      confirmed: false
+    };
+
+export default {
+  name: "Email",
+  components: {},
+  data: function() {
+    return {
+      // declare message with an empty value
+      success: false,
+      ...data
+    };
+  },
+  methods: {
+    submitEmail: function(source) {
+      console.log(fetch);
+      fetch(api_url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: this.email
         })
-          .then(response => {
-            this.success = true
-            this.email = ''
-            this.confirmed = false
-
-          });
-      },
-    },
-
-  };
+      }).then(response => {
+        this.success = true;
+        this.email = "";
+        this.confirmed = false;
+      });
+    }
+  }
+};
 </script>
-
