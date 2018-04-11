@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_ENV=dev poi",
-    "build": "poi build",
+    "dev": "NODE_ENV=development poi",
+    "build": "NODE_ENV=production poi build",
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
     "test": "exit "

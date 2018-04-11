@@ -25,6 +25,10 @@
              class="alert alert-success mt-2" role="alert">
           Email successfully submitted! Expect an appointment notification soon!
         </div>
+        <div v-show="failed"
+             class="alert alert-danger mt-2" role="alert">
+          Email not succesfully submitted! Refresh and try again
+        </div>
       </form>
     </div>
   </section>

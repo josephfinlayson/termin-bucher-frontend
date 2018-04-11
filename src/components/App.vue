@@ -42,15 +42,15 @@
 </template>
 
 <script>
-  import MyHeader from "./header";
-  import Logo from "./logo";
-  import step from "./step";
-  import Email from "./Email";
+import MyHeader from "./header";
+import Logo from "./logo";
+import step from "./step";
+import Email from "./Email";
 
-  export default {
-    name: "app",
-    components: {Logo, MyHeader, step, Email}
-  };
+export default {
+  name: "app",
+  components: { Logo, MyHeader, step, Email }
+};
 </script>
 
 <!-- CSS libraries -->

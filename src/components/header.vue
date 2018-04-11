@@ -26,11 +26,10 @@
 </template>
 
 <script>
-  import logo from './logo'
+import logo from "./logo";
 
-  export default {
-    name: "MyHeader",
-    components: {logo}
-
-  };
+export default {
+  name: "MyHeader",
+  components: { logo }
+};
 </script>

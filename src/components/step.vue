@@ -15,21 +15,18 @@
 </template>
 
 <style scoped>
-  .card {
-    border: 0
-  }
+.card {
+  border: 0;
+}
 
-  .card-title {
-
-  }
+.card-title {
+}
 </style>
 
 
 <script>
-
-  export default {
-    name: "step",
-    props: ['title', 'text'],
-  };
-
+export default {
+  name: "step",
+  props: ["title", "text"]
+};
 </script>
