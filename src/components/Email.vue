@@ -1,4 +1,5 @@
 <template>
+  <a name="signup"></a>
   <section class="container py-5 ">
     <div class="row justify-content-center">
       <form
@@ -43,6 +44,8 @@ import step from "./step";
 function isDev() {
   return process.env.NODE_ENV === "development";
 }
+
+console.log(isDev(), process.env)
 const api_url = isDev() ? "http://localhost:3000/api/email" : "/api/email";
 
 const data = isDev()

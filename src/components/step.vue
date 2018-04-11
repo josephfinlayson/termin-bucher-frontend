@@ -10,7 +10,7 @@
 
 
     >{{text}}</p>
-    <a href="#" class="btn btn-primary">Get started</a>
+    <a href="#signup" class="btn btn-primary">Get started</a>
   </div>
 </template>
 
