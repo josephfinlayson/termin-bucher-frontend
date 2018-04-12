@@ -28,5 +28,5 @@ deployment:
       - s3deploy -source=dist/ -region=eu-central-1 -bucket=termin-bucher
 
   post:
-    - aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/index.html"
+    - aws cloudfront create-invalidation --distribution-id E1C1SIOMY74R2N --paths "/index.html"
     - aws cloudfront create-invalidation --distribution-id E1C1SIOMY74R2N --paths "/"
