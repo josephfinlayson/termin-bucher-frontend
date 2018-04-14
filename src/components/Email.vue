@@ -53,11 +53,12 @@
   const data = isDev()
     ? {
       email: "asdf@asdf.com",
-      confirmed: true
+      confirmed: true,
     }
     : {
       email: "",
       confirmed: false
+
     };
 
   export default {
@@ -67,6 +68,7 @@
       return {
         // declare message with an empty value
         success: false,
+        failed: false,
         ...data
       };
     },
