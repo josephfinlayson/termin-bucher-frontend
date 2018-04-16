@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <MyHeader></MyHeader>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid center-consistently">
       <div class="container-fluid text-center">
         <h1 class="display-4 ">
           <logo/>
@@ -10,8 +10,8 @@
       </div>
     </div>
 
-    <div class="container justify-content-center">
-      <div class="row">
+    <div class="container justify-content-center align-items-center center-consistently">
+      <div class="row  ">
         <step title="1"
               text="Enter your email to get notified if there is an anmeldung appt in the next 7 days in Berlin"></step>
         <step title="2" text="Get notification via email that appointment is available"></step>
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="jumbotron">
+    <div class="jumbotron jumbotron-fluid center-consistently">
       <div class="container py-5 ">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-4"><h5>Why is this needed?</h5>
@@ -36,21 +36,31 @@
         </div>
       </div>
     </div>
+    <section class="container py-5  align-content-center ">
 
-    <Email></Email>
+      <Email></Email>
+    </section>
   </div>
 </template>
+<style>
+  .center-consistently {
+    min-height: 300px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
 
+</style>
 <script>
-import MyHeader from "./header";
-import Logo from "./logo";
-import step from "./step";
-import Email from "./Email";
+  import MyHeader from "./header";
+  import Logo from "./logo";
+  import step from "./step";
+  import Email from "./Email";
 
-export default {
-  name: "app",
-  components: { Logo, MyHeader, step, Email }
-};
+  export default {
+    name: "app",
+    components: { Logo, MyHeader, step, Email }
+  };
 </script>
 
 <!-- CSS libraries -->

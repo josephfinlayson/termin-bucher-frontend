@@ -1,41 +1,41 @@
 <template>
+
   <a name="signup">
-    <section class="container py-5 ">
-      <div class="row justify-content-center">
-        <form
-          v-on:submit.prevent="submitEmail"
-          :onsubmit="submitEmail">
-          <h5> Sign up </h5>
-          <hr/>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input v-model="email" type="email" class="form-control" id="exampleInputEmail1"
-                   aria-describedby="emailHelp"
-                   placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-check">
-            <input v-model="confirmed" type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">I confirm I want to recieve notifications about
-              available appointments for Anmeldung in Berlin</label>
-          </div>
-          <button
-            :disabled="!confirmed && !email"
-            type="submit" class="btn btn-primary mt-2">Submit
-          </button>
-          <div v-show="success"
-               class="alert alert-success mt-2" role="alert">
-            Email successfully submitted! Expect an appointment notification soon!
-          </div>
-          <div v-show="failed"
-               class="alert alert-danger mt-2" role="alert">
-            Email not succesfully submitted! Refresh and try again
-          </div>
-        </form>
-      </div>
-    </section>
+    <div class="row justify-content-center">
+      <form
+        v-on:submit.prevent="submitEmail"
+        :onsubmit="submitEmail">
+        <h5> Sign up </h5>
+        <hr/>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input v-model="email" type="email" class="form-control" id="exampleInputEmail1"
+                 aria-describedby="emailHelp"
+                 placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-check">
+          <input v-model="confirmed" type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">I confirm I want to recieve email notifications about
+            available appointments for Anmeldung in Berlin. They will discontinue 7 days after signup</label>
+        </div>
+        <button
+          :disabled="!confirmed && !email"
+          type="submit" class="btn btn-primary mt-2">Submit
+        </button>
+        <div v-show="success"
+             class="alert alert-success mt-2" role="alert">
+          Email successfully submitted! Expect an appointment notification soon!
+        </div>
+        <div v-show="failed"
+             class="alert alert-danger mt-2" role="alert">
+          Email not succesfully submitted! Refresh and try again
+        </div>
+      </form>
+    </div>
   </a>
 </template>
+
 
 
 <script>
@@ -53,7 +53,7 @@
   const data = isDev()
     ? {
       email: "asdf@asdf.com",
-      confirmed: true,
+      confirmed: true
     }
     : {
       email: "",
@@ -91,7 +91,7 @@
             this.confirmed = false;
           } else {
 
-            this.failed = false
+            this.failed = false;
           }
 
         });
