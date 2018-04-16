@@ -84,9 +84,16 @@
             email: this.email
           })
         }).then(response => {
-          this.success = true;
-          this.email = "";
-          this.confirmed = false;
+
+          if (response.ok) {
+            this.success = true;
+            this.email = "";
+            this.confirmed = false;
+          } else {
+
+            this.failed = false
+          }
+
         });
       }
     }
