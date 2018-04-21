@@ -2,6 +2,7 @@
 
   <a name="signup">
     <div class="row justify-content-center">
+      <div class="col-12">
       <form
         v-on:submit.prevent="submitEmail"
         :onsubmit="submitEmail">
@@ -32,6 +33,7 @@
           Email not succesfully submitted! Refresh and try again
         </div>
       </form>
+      </div>
     </div>
   </a>
 </template>
@@ -39,63 +41,56 @@
 
 
 <script>
-  import MyHeader from "./header";
-  import Logo from "./logo";
-  import step from "./step";
 
-  function isDev() {
-    return process.env.NODE_ENV === "development";
-  }
+function isDev() {
+  return process.env.NODE_ENV === "development";
+}
 
-  console.log(isDev(), process.env);
-  const api_url = isDev() ? "http://localhost:3000/api/email" : "/api/email";
+console.log(isDev(), process.env);
+const api_url = isDev() ? "http://localhost:3000/api/email" : "/api/email";
 
-  const data = isDev()
-    ? {
+const data = isDev()
+  ? {
       email: "asdf@asdf.com",
       confirmed: true
     }
-    : {
+  : {
       email: "",
       confirmed: false
-
     };
 
-  export default {
-    name: "Email",
-    components: {},
-    data: function() {
-      return {
-        // declare message with an empty value
-        success: false,
-        failed: false,
-        ...data
-      };
-    },
-    methods: {
-      submitEmail: function(source) {
-        console.log(fetch);
-        fetch(api_url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            email: this.email
-          })
-        }).then(response => {
-
-          if (response.ok) {
-            this.success = true;
-            this.email = "";
-            this.confirmed = false;
-          } else {
-
-            this.failed = false;
-          }
-
-        });
-      }
+export default {
+  name: "Email",
+  components: {},
+  data: function() {
+    return {
+      // declare message with an empty value
+      success: false,
+      failed: false,
+      ...data
+    };
+  },
+  methods: {
+    submitEmail: function(source) {
+      console.log(fetch);
+      fetch(api_url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: this.email
+        })
+      }).then(response => {
+        if (response.ok) {
+          this.success = true;
+          this.email = "";
+          this.confirmed = false;
+        } else {
+          this.failed = false;
+        }
+      });
     }
-  };
+  }
+};
 </script>
