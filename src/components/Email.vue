@@ -21,7 +21,7 @@
             available appointments for Anmeldung in Berlin. They will discontinue 7 days after signup</label>
         </div>
         <button
-          :disabled="!confirmed && !email"
+          :disabled="isDisabled"
           type="submit" class="btn btn-primary mt-2">Submit
         </button>
         <div v-show="success"
@@ -62,6 +62,11 @@ const data = isDev()
 export default {
   name: "Email",
   components: {},
+  computed: {
+    isDisabled() {
+      return !this.confirmed || !this.email
+    }
+  },
   data: function() {
     return {
       // declare message with an empty value
@@ -87,9 +92,14 @@ export default {
           this.email = "";
           this.confirmed = false;
         } else {
-          this.failed = false;
+          this.failed = true;
         }
-      });
+      }).catch(()=> {
+        this.email = "";
+        this.confirmed = false;
+        this.failed = true;
+
+      })
     }
   }
 };
