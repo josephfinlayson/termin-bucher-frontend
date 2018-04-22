@@ -17,6 +17,6 @@ module.exports = {
     ]
   },
   plugins: [
-    require('poi-preset-bundle-report')()
+    require('@poi/plugin-bundle-report')()
   ]
 }

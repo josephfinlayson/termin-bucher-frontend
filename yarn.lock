@@ -616,6 +616,12 @@
     chalk "^2.3.2"
     log-horizon "^0.1.2"
 
+"@poi/plugin-bundle-report@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@poi/plugin-bundle-report/-/plugin-bundle-report-10.0.0.tgz#94cf4b971a36a5654bc2b64441b98d387b42063d"
+  dependencies:
+    webpack-bundle-analyzer "^2.8.2"
+
 "@sindresorhus/df@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@sindresorhus/df/-/df-1.0.1.tgz#c69b66f52f6fcdd287c807df210305dbaf78500d"
@@ -5815,7 +5821,7 @@ pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
 
-poi-preset-bundle-report@^2.0.0:
+poi-preset-bundle-report@^3.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/poi-preset-bundle-report/-/poi-preset-bundle-report-2.0.2.tgz#a09e139ac0137ad5d7b2a1d15b77b01c06a92259"
   dependencies:

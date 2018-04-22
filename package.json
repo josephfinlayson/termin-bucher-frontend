@@ -18,12 +18,14 @@
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
     "poi": "^10.0.0",
-    "poi-preset-bundle-report": "^2.0.0",
+    "poi-preset-bundle-report": "^3.0.0",
     "promise-polyfill": "^6.0.2",
     "serve": "^6.5.5",
     "tyu": "^1.0.4",
     "vue-resource": "^1.5.0",
     "whatwg-fetch": "^2.0.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@poi/plugin-bundle-report": "^10.0.0"
+  }
 }
