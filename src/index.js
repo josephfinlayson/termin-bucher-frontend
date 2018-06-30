@@ -13,7 +13,6 @@ Vue.use(VueAnalytics, {
 new Vue({
   el: "#app",
   render: function(render) {
-    this.$ga.page('/')
     return render(App);
   }
 });

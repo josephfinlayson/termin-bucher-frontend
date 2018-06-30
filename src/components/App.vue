@@ -58,6 +58,9 @@
 
 
   export default {
+    mounted () {
+      this.$ga.page('/')
+    },
     name: "app",
     components: { Logo, MyHeader, step, Email }
   };
