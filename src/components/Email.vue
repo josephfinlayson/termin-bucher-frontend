@@ -77,7 +77,15 @@ export default {
   },
   methods: {
     submitEmail: function(source) {
-      console.log(fetch);
+
+      this.$ga.event({
+        eventCategory: 'email_ad',
+        eventAction: 'action',
+        eventLabel: 'label',
+        eventValue: 123
+      })
+
+
       fetch(api_url, {
         method: "POST",
         headers: {

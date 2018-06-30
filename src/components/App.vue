@@ -56,6 +56,7 @@
   import step from "./step";
   import Email from "./Email";
 
+
   export default {
     name: "app",
     components: { Logo, MyHeader, step, Email }
