@@ -59,8 +59,11 @@
 
   export default {
     mounted () {
-      this.$ga.page('/')
-    },
+      this.$ga.page({
+        page: '/',
+        title: 'Home page',
+        location: window.location.href
+      })    },
     name: "app",
     components: { Logo, MyHeader, step, Email }
   };
