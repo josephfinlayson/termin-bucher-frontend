@@ -59,11 +59,10 @@
 
   export default {
     mounted () {
-      this.$ga.page({
-        page: '/',
-        title: 'Home page',
-        location: window.location.href
-      })    },
+      setTimeout(()=> {
+        ga('send', 'pageview', '/');
+      },1000)
+   },
     name: "app",
     components: { Logo, MyHeader, step, Email }
   };
