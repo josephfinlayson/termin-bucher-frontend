@@ -1,20 +1,61 @@
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: terminator-static
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: terminator-static
+    # labels:
+    #   - terminator-static
+spec:
+#   selector:
+#     matchLabels:
+#         - terminator-static
+  replicas: 1
+  template:
     spec:
-      selector:
-        matchLabels:
-          app: lookdat-app-static
-      replicas: 1
-      template:
-        # metadata:
-        #   labels:
-        #     app: lookdat-app-static
-        spec:
-          containers:
-            - image: registry.digitalocean.com/unmanaged-registry/terminator-static:latest
-              imagePullPolicy: Always
-              name: terminator-static
-              ports:
-                - containerPort: 80
+      containers:
+         - image: registry.digitalocean.com/unmanaged-registry/terminator-static:latest
+           imagePullPolicy: Always
+           name: terminator-static
+           ports:
+           - containerPort: 80
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-production
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/use-regex: "true"
+      nginx.ingress.kubernetes.io/enable-cors: "true"
+      nginx.ingress.kubernetes.io/cors-allow-headers: "lookdat-domain"
+  name: terminator-static-ingress
+spec:
+  rules:
+    - host: terminator.dev.hobby-paas.cf
+      http:
+        paths:
+         - path: /
+           backend:
+              serviceName: terminator-static
+              servicePort: http
+         - path: /*
+           backend:
+             serviceName: terminator-static
+             servicePort: http            
+  tls:
+    - hosts:
+      - terminator.dev.hobby-paas.cf
+      secretName: letsencrypt-production
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: terminator-static
+spec:
+  ports:
+    - name: http
+      port: 8002
+      targetPort: 80
+  selector:
+    app: terminator-static
+  type: NodePort
