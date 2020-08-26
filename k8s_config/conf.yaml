@@ -1,0 +1,20 @@
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: terminator-static
+    spec:
+      selector:
+        matchLabels:
+          app: lookdat-app-static
+      replicas: 1
+      template:
+        # metadata:
+        #   labels:
+        #     app: lookdat-app-static
+        spec:
+          containers:
+            - image: registry.digitalocean.com/unmanaged-registry/terminator-static:latest
+              imagePullPolicy: Always
+              name: terminator-static
+              ports:
+                - containerPort: 80
