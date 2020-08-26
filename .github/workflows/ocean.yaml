@@ -30,12 +30,12 @@ jobs:
         run: doctl registry login 
                 
       - name: Build Static assets
-        run: docker build -t registry.digitalocean.com/$registry/$app:latest -t registry.digitalocean.com/$registry/lookdat-static:$GITHUB_SHA .
+        run: docker build -t registry.digitalocean.com/$registry/$app:latest -t registry.digitalocean.com/$registry/$app:$GITHUB_SHA .
 
       # Push the Docker image to Google Container Registry
       - name: Publish
         run: | 
-            docker push registry.digitalocean.com/$registry/app
+            docker push registry.digitalocean.com/$registry/$app
 
       # Set up kustomize
       - name: Set up Kustomize
