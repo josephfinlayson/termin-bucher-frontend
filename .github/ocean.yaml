@@ -24,7 +24,7 @@ jobs:
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
-          token: {{secrets.do_token}}
+          token: ${{secrets.do_token}}
       
       - name: login to registry
         run: doctl registry login 
