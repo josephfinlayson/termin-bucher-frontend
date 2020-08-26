@@ -30,7 +30,7 @@ jobs:
         run: doctl registry login 
                 
       - name: Build Static assets
-        run: docker build -t registry.digitalocean.com/$registry/$app:latest -t registry.digitalocean.com/$registry/lookdat-static:$GITHUB_SHA vue/lookdat
+        run: docker build -t registry.digitalocean.com/$registry/$app:latest -t registry.digitalocean.com/$registry/lookdat-static:$GITHUB_SHA .
 
       # Push the Docker image to Google Container Registry
       - name: Publish
@@ -50,7 +50,7 @@ jobs:
         run: |
           cd k8s_config
           kubectl apply -k .
-          kubectl set image deployment/$app $app=registry.digitalocean.com/$registry/$app:$GITHUB_SHA --record --namespace lookdat
+          kubectl set image deployment/$app $app=registry.digitalocean.com/$registry/$app:$GITHUB_SHA --record --namespace $namespace
 
       - name: Verify deployment
         run:  | 
