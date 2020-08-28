@@ -2,12 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: terminator-static
-    # labels:
-    #   - terminator-static
 spec:
-#   selector:
-#     matchLabels:
-#         - terminator-static
   replicas: 1
   template:
     spec:
@@ -25,9 +20,6 @@ metadata:
       cert-manager.io/cluster-issuer: letsencrypt-production
       kubernetes.io/ingress.class: nginx
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/use-regex: "true"
-      nginx.ingress.kubernetes.io/enable-cors: "true"
-      nginx.ingress.kubernetes.io/cors-allow-headers: "lookdat-domain"
   name: terminator-static-ingress
 spec:
   rules:
