@@ -12,10 +12,9 @@
 
     <div class="container justify-content-center align-items-center center-consistently">
       <div class="row  ">
-        <step title="1"
-              text="Enter your email to get notified if there is an anmeldung appt in the next 7 days in Berlin"></step>
+        <step title="1" text="Enter your email to get notified if there is an anmeldung appt in the next 7 days in Berlin"></step>
         <step title="2" text="Get notification via email that appointment is available"></step>
-        <step title="3" text="Click the link in your email, and grab that appointment!"></step>
+        <step title="3" text="Go to the appointment, or cancel if you can't make it!"></step>
       </div>
     </div>
 
@@ -33,6 +32,9 @@
           <div class="mb-4 mb-lg-0 col-12 col-lg-4"><h5>What does it cost?</h5>
             <p>It's totally free, we will also not sell or give your email to anyone else. You can stop recieving
               notifications at any time</p></div>
+       
+                 <div class="mb-4 mb-lg-0 col-12 col-lg-4"><h5>Comments or feedback?</h5>
+            <p>Email joseph.finlayson@gmail.com. I'd love to work with a designer to collaborate on this or other projects </p></div>
         </div>
       </div>
     </div>
@@ -54,7 +56,7 @@
   import MyHeader from "./header";
   import Logo from "./logo";
   import step from "./step";
-  import Email from "./Email";
+  import Email from "./Form";
 
 
   export default {
