@@ -30,8 +30,7 @@
               can
               let you know!</p></div>
           <div class="mb-4 mb-lg-0 col-12 col-lg-4"><h5>What does it cost?</h5>
-            <p>It's totally free, we will also not sell or give your email to anyone else. You can stop recieving
-              notifications at any time</p></div>
+            <p>It's totally free, we will also not sell or give your email to anyone else. It's a hobby project. If it's useful, send me an email :)</p></div>
        
                  <div class="mb-4 mb-lg-0 col-12 col-lg-4"><h5>Comments or feedback?</h5>
             <p>Email joseph.finlayson@gmail.com. I'd love to work with a designer to collaborate on this or other projects </p></div>
@@ -39,7 +38,7 @@
       </div>
     </div>
     <section class="container py-5  align-content-center ">
-      <Email></Email>
+      <Form></Form>
     </section>
   </div>
 </template>
@@ -56,7 +55,7 @@
   import MyHeader from "./header";
   import Logo from "./logo";
   import step from "./step";
-  import Email from "./Form";
+  import Form from "./Form";
 
 
   export default {
@@ -66,7 +65,7 @@
       },1000)
    },
     name: "app",
-    components: { Logo, MyHeader, step, Email }
+    components: { Logo, MyHeader, step, Form }
   };
 </script>
 

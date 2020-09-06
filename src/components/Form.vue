@@ -2,7 +2,7 @@
   <a name="signup">
     <div class="row justify-content-center">
       <div class="col-12">
-        <form v-on:submit.prevent="submitEmail" :onsubmit="submitEmail">
+        <form :onsubmit="submitEmail" @submit.prevent="submitEmail">
           <h5>Sign up</h5>
           <hr />
           <div class="form-group">
@@ -32,19 +32,38 @@
             <label>Last Name</label>
             <input v-model="last_name" type="text" class="form-control" />
           </div>
-          <div class="form-check">
-            <input v-model="confirmed" type="checkbox" class="form-check-input" id="exampleCheck1" />
+
+          <div 
+           v-for="{authority_id, authority_name} in locations"
+            :key="authority_id" 
+          class="form-check form-check-inline">
+            <input
+              :id="'loc' + authority_id"
+              v-model="selected_authority_id"
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              :value="authority_id"
+              
+            />
+            <label class="form-check-label" 
+            :for="'loc' + authority_id"
+            >{{authority_name}}</label>
+            
+          </div>
+
+          <div  class="form-check">
+            <input id="check" v-model="confirmed" type="checkbox" class="form-check-input" />
             <label class="form-check-label" for="exampleCheck1">
               I confirm I want to recieve an appointment.
               <em>I promise I will cancel the appt if I can't make it.</em>
             </label>
           </div>
           <button :disabled="isDisabled" type="submit" class="btn btn-primary mt-2">Submit</button>
-          <div
-            v-show="success"
-            class="alert alert-success mt-2"
-            role="alert"
-          >Email successfully submitted! Expect an appointment notification soon!</div>
+          <div v-show="success" class="alert alert-success mt-2" role="alert">
+            Email successfully submitted! Expect an appointment notification
+            soon!
+          </div>
           <div
             v-show="failed"
             class="alert alert-danger mt-2"
@@ -56,79 +75,104 @@
   </a>
 </template>
 
-
-
 <script>
 function isDev() {
-  return process.env.NODE_ENV === "development";
+  return process.env.NODE_ENV === 'development'
 }
 
-console.log(isDev(), process.env);
-const api_url = isDev() ? "http://localhost:3000/api/user" : "/api/user";
+console.log(isDev(), process.env)
+const base_url = isDev() ? 'http://localhost:3000/api' : '/api'
+
+const api_url = `${base_url}/user`
 
 const data = isDev()
   ? {
-      email: "asdf@asdf.com",
+      email: 'asdf@asdf.com',
       confirmed: true,
+      first_name: 'JJ',
+      last_name: 'JJ',
+      phone_number: '01',
     }
   : {
-      email: "",
+      email: '',
       confirmed: false,
-    };
+    }
 
 export default {
-  name: "Email",
+  name: 'Email',
   components: {},
-  computed: {
-    isDisabled() {
-      return !this.confirmed || !this.email;
-    },
-  },
-  data: function () {
+  data: () => {
     return {
-      // declare message with an empty value
       success: false,
       failed: false,
+      locations: [],
+      selected_authority_id: '',
       ...data,
-    };
+    }
+  },
+  computed: {
+    isDisabled() {
+      return !this.confirmed || !this.email
+    },
+  },
+  beforeMount: function () {
+    this.locations = [1, 2]
+    this.getLocations()
   },
   methods: {
-    submitEmail: function (source) {
-      this.$ga.event({
-        eventCategory: "email_add",
-        eventAction: "action",
-        eventLabel: "label",
-        eventValue: 123,
-      });
-
-      const { email, phone_number, first_name, last_name } = this;
-      fetch(api_url, {
-        method: "POST",
+    resetForm: function resetForm() {
+      this.phone_number = ''
+      this.first_name = ''
+      this.last_name = ''
+      this.success = true
+      this.email = ''
+      this.confirmed = false
+    },
+    getLocations: function getLocations() {
+      fetch(`${base_url}/locations`, {
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
+        },
+      }).then(async (r) => {
+        this.locations = await r.json()
+        this.selected_authority_id = this.locations[0].authority_id
+      })
+    },
+    submitEmail: function submitEmail() {
+      this.$ga.event({
+        eventCategory: 'email_add',
+        eventAction: 'action',
+        eventLabel: 'label',
+        eventValue: 123,
+      })
+
+      const { email, phone_number, first_name, last_name, selected_authority_id } = this
+      fetch(api_url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           email,
           phone_number,
           first_name,
-          last_name
+          last_name,
+          authority_id: selected_authority_id,
         }),
       })
-        .then((response) => {
+        .then(function (response) {
           if (response.ok) {
-            this.success = true;
-            this.email = "";
-            this.confirmed = false;
+            this.resetForm()
           } else {
-            this.failed = true;
+            this.resetForm()
+            this.failed = true
           }
         })
         .catch(() => {
-          this.email = "";
-          this.confirmed = false;
-          this.failed = true;
-        });
+          this.resetForm()
+          this.failed = true
+        })
     },
   },
-};
+}
 </script>

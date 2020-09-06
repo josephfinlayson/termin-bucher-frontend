@@ -15,6 +15,7 @@
     "email": "joseph.finlayson@gmail.com"
   },
   "dependencies": {
+    "eslint-plugin-prettier-vue": "^2.1.1",
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
     "poi": "^10.0.0",
@@ -26,6 +27,11 @@
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
-    "@poi/plugin-bundle-report": "^10.0.0"
+    "@poi/plugin-bundle-report": "^10.0.0",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-vue": "^6.2.2",
+    "prettier": "2.1.1"
   }
 }
