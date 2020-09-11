@@ -2,7 +2,8 @@
   <a name="signup">
     <div class="row justify-content-center">
       <div class="col-12">
-        <form :onsubmit="submitEmail" @submit.prevent="submitEmail">
+        <form 
+        @submit="submitEmail" >
           <h5>Sign up</h5>
           <hr />
           <div class="form-group">
@@ -120,15 +121,16 @@ export default {
     this.getLocations()
   },
   methods: {
-    resetForm: function resetForm() {
+    resetForm() {
       this.phone_number = ''
       this.first_name = ''
       this.last_name = ''
+      this.failed = false
       this.success = true
       this.email = ''
       this.confirmed = false
     },
-    getLocations: function getLocations() {
+    getLocations() {
       fetch(`${base_url}/locations`, {
         headers: {
           'Content-Type': 'application/json',
@@ -138,14 +140,15 @@ export default {
         this.selected_authority_id = this.locations[0].authority_id
       })
     },
-    submitEmail: function submitEmail() {
-      this.$ga.event({
-        eventCategory: 'email_add',
-        eventAction: 'action',
-        eventLabel: 'label',
-        eventValue: 123,
-      })
-
+    submitEmail(e) {
+      console.log(e)
+      //   this.$ga.event({
+      //     eventCategory: 'email_add',
+      //     eventAction: 'action',
+      //     eventLabel: 'label',
+      //     eventValue: 123,
+      //   })
+      e.preventDefault()
       const { email, phone_number, first_name, last_name, selected_authority_id } = this
       fetch(api_url, {
         method: 'POST',
@@ -160,15 +163,17 @@ export default {
           authority_id: selected_authority_id,
         }),
       })
-        .then(function (response) {
+        .then((response) => {
           if (response.ok) {
+            console.log(response.ok)
             this.resetForm()
           } else {
             this.resetForm()
             this.failed = true
           }
         })
-        .catch(() => {
+        .catch((e) => {
+          console.error(e)
           this.resetForm()
           this.failed = true
         })

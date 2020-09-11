@@ -6,7 +6,7 @@
         <h1 class="display-4 ">
           <logo/>
         </h1>
-        <p class="lead">Get notified when then there is an Anmeldung appointment!</p>
+        <p class="lead">Let a robot get an appointment for you</p>
       </div>
     </div>
 
@@ -43,30 +43,28 @@
   </div>
 </template>
 <style>
-  .center-consistently {
-    min-height: 300px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
-
+.center-consistently {
+  min-height: 300px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 </style>
 <script>
-  import MyHeader from "./header";
-  import Logo from "./logo";
-  import step from "./step";
-  import Form from "./Form";
+import MyHeader from './header'
+import Logo from './logo'
+import step from './step'
+import Form from './Form'
 
-
-  export default {
-    mounted () {
-      setTimeout(()=> {
-        ga('send', 'pageview', '/');
-      },1000)
-   },
-    name: "app",
-    components: { Logo, MyHeader, step, Form }
-  };
+export default {
+  name: 'App',
+  components: { Logo, MyHeader, step, Form },
+  mounted() {
+    setTimeout(() => {
+      ga('send', 'pageview', '/')
+    }, 1000)
+  },
+}
 </script>
 
 <!-- CSS libraries -->
