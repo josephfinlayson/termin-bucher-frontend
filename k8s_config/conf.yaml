@@ -33,11 +33,23 @@ spec:
          - path: /*
            backend:
              serviceName: terminator-static
-             servicePort: http            
+             servicePort: http
+    - host: terminator.berlin
+      http:
+        paths:
+         - path: /
+           backend:
+              serviceName: terminator-static
+              servicePort: http
+         - path: /*
+           backend:
+             serviceName: terminator-static
+             servicePort: http        
           
   tls:
     - hosts:
       - terminator.dev.hobby-paas.cf
+      - terminator.berlin
       secretName: letsencrypt-production
 ---
 apiVersion: v1
