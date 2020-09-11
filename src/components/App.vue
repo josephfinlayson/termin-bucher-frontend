@@ -12,8 +12,8 @@
 
     <div class="container justify-content-center align-items-center center-consistently">
       <div class="row  ">
-        <step title="1" text="Enter your email to get notified if there is an anmeldung appt in the next 7 days in Berlin"></step>
-        <step title="2" text="Get notification via email that appointment is available"></step>
+        <step title="1" text="Enter your details to have an appointment booked for you"></step>
+        <step title="2" text="Get notification via email that appointment is booked"></step>
         <step title="3" text="Go to the appointment, or cancel if you can't make it!"></step>
       </div>
     </div>
