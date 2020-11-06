@@ -54,7 +54,7 @@
 import MyHeader from './header'
 import Logo from './logo'
 import step from './step'
-import Form from './Form'
+import Form from './Form/Form'
 
 export default {
   name: 'App',

@@ -15,6 +15,7 @@
     "email": "joseph.finlayson@gmail.com"
   },
   "dependencies": {
+    "@duoa/vue-scheduler": "^2.0.0",
     "eslint-plugin-prettier-vue": "^2.1.1",
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",

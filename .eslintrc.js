@@ -74,11 +74,12 @@ module.exports = {
       {
         // Override all options of `prettier` here
         // @see https://prettier.io/docs/en/options.html
-        printWidth: 100,
+        printWidth: 120,
         singleQuote: true,
         semi: false,
         trailingComma: 'es5',
       },
     ],
+    'vue/attribute-hyphenation': "0"
   },
 }
