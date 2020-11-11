@@ -38,8 +38,7 @@ export default {
   data() {
     return {
       selected: {},
-    };
-  },
+    };  },
   methods: {
     changed(val) {
           this.$emit('input', val)

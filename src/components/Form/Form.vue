@@ -14,9 +14,6 @@
               aria-describedby="emailHelp"
               placeholder="Enter email"
             />
-            <small id="emailHelp" class="form-text text-muted"
-              >We'll never share your email with anyone else.</small
-            >
 
             <label>Phone number</label>
             <input
@@ -52,12 +49,25 @@
             </div>
           </div>
 
-          <div
-            v-for="{ authority_id, authority_name } in locations"
-            :key="authority_id"
-            class="form-check form-check-inline"
-          ></div>
-          <scheduler v-model="time" />
+          <div class="form-row">
+            <div class="col">
+              <label>When do you want your appointment to be?</label>
+              <scheduler v-model="time" />
+
+              <small class="form-text text-muted"
+                >Skip if you're flexible, don't be too choosy, otherwise you'll
+                never get one!</small
+              >
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col"></div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label>Where do you want your appointment to be?</label>
+            </div>
+          </div>
           <div
             v-for="{ authority_id, authority_name } in locations"
             :key="authority_id"
@@ -110,10 +120,10 @@
 
 <script>
 import scheduler from "./Scheduler";
-import {submitForm, getLocations} from '../../utils/api'
-import {getDefaultData} from '../../utils/helpers'
+import { submitForm, getLocations } from "../../utils/api";
+import { getDefaultData } from "../../utils/helpers";
 
-const data = getDefaultData()
+const data = getDefaultData();
 
 export default {
   name: "Email",
@@ -125,15 +135,16 @@ export default {
       locations: [],
       selected_authority_id: "",
       time: null,
-    ...data,
+      ...data,
     };
   },
   watch: {
-      time: {
-          handler(v){
-          console.log('formVal', v)
-      }
-  } },
+    time: {
+      handler(v) {
+        console.log("formVal", v);
+      },
+    },
+  },
   computed: {
     isDisabled() {
       return !this.confirmed || !this.email;
@@ -151,11 +162,10 @@ export default {
       this.confirmed = false;
     },
     getLocations() {
-        return getLocations()
-        .then(({locations, selected_authority_id}) => {
-            this.locations = locations
-            this.selected_authority_id = selected_authority_id
-        })
+      return getLocations().then(({ locations, selected_authority_id }) => {
+        this.locations = locations;
+        this.selected_authority_id = selected_authority_id;
+      });
     },
     submitEmail(e) {
       e.preventDefault();
@@ -165,7 +175,7 @@ export default {
         first_name,
         last_name,
         selected_authority_id,
-        time
+        time,
       } = this;
 
       submitForm(
